@@ -14,7 +14,7 @@ const ToDoItem = ({ todo, isCompleted, id, setRefresh }) => {
 
   const onClickCheckBox = () => {
     setIsCheck(!isCheck);
-    updateTodo(id, { todo, isCompleted }).then(() =>
+    updateTodo(id, { todo, isCompleted: !isCheck }).then(() =>
       setRefresh((state) => state + 1)
     );
   };
